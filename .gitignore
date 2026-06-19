@@ -1,0 +1,5 @@
+# Open or create your .gitignore file and add these lines:
+.terraform/
+*.zip
+*.exe
+
