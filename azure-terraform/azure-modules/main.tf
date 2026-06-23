@@ -41,3 +41,4 @@ module "virtual_machine" {
   image_sku           = var.root_image_sku
   image_version       = var.root_image_version
 }
+

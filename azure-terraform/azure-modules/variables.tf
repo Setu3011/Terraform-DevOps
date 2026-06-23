@@ -13,3 +13,4 @@ variable "root_image_publisher" { type = string }
 variable "root_image_offer" { type = string }
 variable "root_image_sku" { type = string }
 variable "root_image_version" { type = string }
+
