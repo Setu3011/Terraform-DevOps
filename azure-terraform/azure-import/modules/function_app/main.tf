@@ -83,12 +83,11 @@ resource "azurerm_function_app_flex_consumption" "AzureResourceSummary" {
 
      app_settings = {
       AZURE_SUBSCRIPTION_ID                    = "44d29901-43e4-43f1-b207-3c9f043349ea"
-  
       RECIPIENT_EMAIL                          = "setupatel3011@gmail.com"
       RESOURCE_GROUP_NAME                      = "azure-rg"
       SENDER_EMAIL                             = "DoNotReply@7a299ba7-f33a-4785-8288-83514ad2b990.azurecomm.net"
       # APPLICATIONINSIGHTS_CONNECTION_STRING = var.application_insights_connection_string
-
+  
   }
 
   }
