@@ -42,7 +42,6 @@ variable "network_config" {
   default     = ["10.0.0.0/16", "10.0.2.0", 24]
 }
 
-
 variable "allowed_vm_sizes" {
   type        = list(string)
   description = "Allowed VM sizes"

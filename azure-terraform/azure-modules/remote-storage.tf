@@ -41,3 +41,4 @@ resource "azurerm_storage_container" "storage_state" {
   storage_account_name  = azurerm_storage_account.tfstate.name
   container_access_type = "private"
 }
+
