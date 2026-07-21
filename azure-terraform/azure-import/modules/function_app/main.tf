@@ -64,10 +64,9 @@ name = var.function_app["func2"].name
         }
 
   webdeploy_publish_basic_authentication_enabled = false
-
-
+  
   instance_memory_in_mb = 512
-
+  
   https_only = true
 
   identity {
