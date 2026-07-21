@@ -1,112 +1,60 @@
-# Open or create your .gitignore file and add these lines:
-.terraform/
-*.zip
-*.exe
-
-# Local .terraform directories
-**/.terraform/*
-
-# .tfstate files which contain sensitive credentials
-*.tfstate
-*.tfstate.*
-
-# Crash log files
-crash.log
-crash.*.log
-
-# Exclude all .tfvars files if they contain sensitive data
-*.tfvars
-*.tfvars.json
-
-# Override files
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-
-# Include override directories
-_override.tf/*
-
 ###############################################################################
 # Terraform
 ###############################################################################
-
-# Local .terraform directories
-**/.terraform/*
 .terraform/
-
-# Terraform state files
+.terraform.lock.hcl
 *.tfstate
 *.tfstate.*
-
-# Terraform plan files
-*.tfplan
-*.plan
-
-# Crash logs
 crash.log
 crash.*.log
-
-# Override files
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
-
-# Terraform lock file (uncomment if you don't want to commit it)
-# .terraform.lock.hcl
 
 ###############################################################################
 # Terraform Variables (Secrets)
 ###############################################################################
-
 terraform.tfvars
 terraform.tfvars.json
 *.auto.tfvars
 *.auto.tfvars.json
-secrets.tfvars
-*.secret.tfvars
 
 ###############################################################################
 # Environment Files
 ###############################################################################
-
 .env
 .env.*
 !.env.example
 
 ###############################################################################
-# Azure
+# Azure CLI
 ###############################################################################
-
-local.settings.json
+.azure/
 
 ###############################################################################
 # IDE
 ###############################################################################
-
 .vscode/
 .idea/
+*.iml
 
 ###############################################################################
 # OS Files
 ###############################################################################
-
 .DS_Store
 Thumbs.db
 
 ###############################################################################
 # Logs
 ###############################################################################
-
 *.log
 
 ###############################################################################
 # Python
 ###############################################################################
-
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
 *.pyd
 .venv/
@@ -114,9 +62,19 @@ venv/
 env/
 
 ###############################################################################
-# Temporary Files
+# Secrets
 ###############################################################################
+*.pem
+*.key
+*.pfx
+*.cer
+*.crt
+id_rsa
+id_rsa.pub
+*.kubeconfig
+*.config
 
-*.tmp
-*.bak
-*.swp
+###############################################################################
+# Local Configuration
+###############################################################################
+local.settings.json

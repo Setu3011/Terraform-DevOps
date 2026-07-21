@@ -4,17 +4,14 @@ resource "azurerm_resource_group" "rg" {
 }
 
 # Storage Accounts
-# module "storage_accounts" {
 
-#   source = "./modules/storage_account"
+module "storage_accounts" {
 
-#   for_each = var.storage_accounts
+  source = "./modules/storage_account"
 
-#   name                     = each.value.name
-#   resource_group_name      = each.value.resource_group_name
-#   location                 = each.value.location
-#   account_replication_type = each.value.account_replication_type
-# }
+  storage_account = var.storage_account
+}
+
 
 # App Service Plans
 
@@ -50,26 +47,23 @@ module "function_apps" {
 
   source = "./modules/function_app"
 
-  for_each = var.function_apps
+  function_app = var.function_app
 
-  name                = each.value.name
-  resource_group_name = each.value.resource_group_name
-  location            = each.value.location
+  service_plan_asp1_id = module.app_service_plans["asp1"].id
+  service_plan_asp2_id = module.app_service_plans["asp2"].id
 
-  storage_account_name = each.value.storage_account_key
+  app_insights_app1_connection_string       = module.application_insights["app1"].connection_string
+  app_insights_app2_connection_string       = module.application_insights["app2"].connection_string
+  communication_services1_connection_string = module.communication_services["communication1"].primary_connection_string
+  sender_email                              = module.email_domains["domain1"].sender_email
 
-  storage_container_endpoint = each.value.storage_container_endpoint
+  func1_storage_access_key = module.storage_accounts.azurerg91bd_primary_access_key
 
-  service_plan_id = module.app_service_plans[
-    each.value.app_service_plan_key
-  ].id
+  func1_storage_container_endpoint = module.storage_accounts.azurerg91bd_primary_blob_endpoint
 
-  application_insights_connection_string = module.application_insights[
-    each.value.application_insights_key
-  ].connection_string
+  func2_storage_access_key = module.storage_accounts.azurerga2df_primary_access_key
 
-  app_settings = each.value.app_settings
-
+  func2_storage_container_endpoint = module.storage_accounts.azurerga2df_primary_blob_endpoint
 }
 
 # Communication Services
@@ -110,8 +104,10 @@ module "email_domains" {
 
   name = each.value.name
 
+  domain_name = each.value.name
+
   resource_group_name = each.value.resource_group_name
 
-  email_service_id = module.email_services[each.value.email_service_key].id
+  email_service_id = "/subscriptions/44d29901-43e4-43f1-b207-3c9f043349ea/resourceGroups/azure-rg/providers/Microsoft.Communication/emailServices/azureemail3011"
 
 }

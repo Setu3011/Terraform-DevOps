@@ -1,15 +1,14 @@
-variable "name" {
-  type = string
-}
+variable "storage_account" {
 
-variable "resource_group_name" {
-  type = string
-}
+  type = map(object({
 
-variable "location" {
-  type = string
-}
+    name                     = string
 
-variable "account_replication_type" {
-  type = string
+    resource_group_name      = string
+
+    location                 = string
+
+    account_replication_type = string
+
+  }))
 }

@@ -4,6 +4,7 @@ resource "azurerm_email_communication_service" "email_service" {
 
   resource_group_name = var.resource_group_name
 
-  data_location = var.location
+  data_location = "India"
 
+  tags = {}
 }

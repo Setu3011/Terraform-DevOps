@@ -10,9 +10,7 @@ variable "resource_group" {
 }
 
 
-variable "storage_accounts" {
-  description = "Storage Accounts to Import"
-
+variable "storage_account" {
   type = map(object({
     name                     = string
     resource_group_name      = string
@@ -47,7 +45,7 @@ variable "application_insights" {
   }))
 }
 
-variable "function_apps" {
+variable "function_app" {
 
   type = map(object({
 
@@ -60,7 +58,8 @@ variable "function_apps" {
 
     app_service_plan_key     = string
     application_insights_key = string
-    app_settings             = optional(map(string), {})
+
+    app_settings = optional(map(string), {})
 
   }))
 }

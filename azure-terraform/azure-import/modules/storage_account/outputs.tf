@@ -33,3 +33,20 @@ output "azurerga2df_name" {
 output "azurerga2df_primary_blob_endpoint" {
   value = azurerm_storage_account.azurerga2df.primary_blob_endpoint
 }
+
+output "setu3011_primary_access_key" {
+  value     = azurerm_storage_account.setu3011.primary_access_key
+  sensitive = true
+}
+
+output "azurerg91bd_primary_access_key" {
+  value     = azurerm_storage_account.azurerg91bd.primary_access_key
+  sensitive = true
+}
+
+output "azurerga2df_primary_access_key" {
+  value     = azurerm_storage_account.azurerga2df.primary_access_key
+  sensitive = true
+}
+
+

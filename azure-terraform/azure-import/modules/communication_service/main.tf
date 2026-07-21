@@ -1,9 +1,9 @@
-# resource "azurerm_communication_service" "communication_service" {
+resource "azurerm_communication_service" "communication_service" {
 
-#   name                = var.name
+  name                = var.name
 
-#   resource_group_name = var.resource_group_name
+  resource_group_name = var.resource_group_name
 
-#   data_location = var.location
+  data_location = var.location
 
-# }
+}
