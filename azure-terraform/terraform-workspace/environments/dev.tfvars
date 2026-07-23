@@ -4,7 +4,7 @@ location = "Central India"
 
 resource_group_name = "rg-dev"
 
-storage_account_name = "devstorage12345"
+storage_account_name = "devstorage3011"
 
 vnet_name = "vnet-dev"
 

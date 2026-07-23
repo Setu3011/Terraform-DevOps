@@ -4,7 +4,7 @@ location = "Central India"
 
 resource_group_name = "rg-stage"
 
-storage_account_name = "stagestorage12345"
+storage_account_name = "stagestorage3011"
 
 vnet_name = "vnet-stage"
 
