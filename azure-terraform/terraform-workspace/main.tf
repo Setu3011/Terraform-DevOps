@@ -56,3 +56,4 @@ module "virtual_machine" {
   tags = local.common_tags
 
 }
+
